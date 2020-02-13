@@ -23,7 +23,7 @@ import hsbc from "assets/img/hsbc.png";
 
 const useStyles = makeStyles(styles);
 
-export default function TeamSection() {
+export default function ClientSection() {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRounded,
