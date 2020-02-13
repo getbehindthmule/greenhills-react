@@ -20,52 +20,34 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Prior History</h2>
+          <h3 className={classes.title}>JP Morgan</h3>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            Prior to Green Hills, we have experience with introducing
+            scrum, quality improvements and continuous integration
+            practices with JP Morgan in Glasgow. Initiatives made
+            include introducing automated unit testing, code inspection
+            and quality metrics tracking within the team to improve software
+            quality. While at JP Morgan also lead initiative to build a new
+            team to re-architect the mature ‘iBanker’ Investment Banking CRM
+            application to enable a more responsive delivery for new
+            business functionality. Planned and implemented the migration
+            and re-architecture from an expensive legacy platform while
+            continuing to deliver new functionality for the emerging mobile
+            platform.
           </h4>
-          <form>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <CustomInput
-                labelText="Your Message"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5
-                }}
-              />
-              <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
-                  <Button color="primary">Send Message</Button>
-                </GridItem>
-              </GridContainer>
-            </GridContainer>
-          </form>
+          <h3 className={classes.title}>NCR</h3>
+          <h4 className={classes.description}>
+            Also have many prior years experience in Solutions Architecture
+            from time spent with NCR in Dundee. Defined the current
+            enterprise management system for NCR. Working with Business
+            Analysts, defined the requirements for NCR's next generation
+            Systems Management Solution. Defined a technology platform of
+            Spring, JPA/Hibernate, Spring Integration/AMQP for a platform
+            independent, scalable service architecture for the Incident
+            Management, Inventory and Analytics Features. Directed four
+            development groups in India, UK & USA in their Agile Development.
+          </h4>
         </GridItem>
       </GridContainer>
     </div>
