@@ -14,12 +14,16 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import SectionDownload from "./Sections/SectionDownload.js";
+
 
 import styles from "assets/jss/material-kit-react/views/components.js";
-import landing from "assets/img/what-we-do-updated.jpg";
+
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Icon from "@material-ui/core/Icon";
+
+import SectionSummary from "./Sections/SectionSummary";
+
 
 
 const useStyles = makeStyles(styles);
@@ -29,6 +33,26 @@ export default function Components(props) {
     const {...rest} = props;
     return (
         <div>
+
+            <Header
+                color="transparent"
+                fixed
+                rightLinks={
+                    <List className={classes.list}>
+                        <ListItem className={classes.listItem}>
+                            <Link to="contact-us" style={{color: '#FFF'}}>
+                                <Button
+                                    color="transparent"
+                                    className={classes.navLink}
+                                >
+                                    <Icon className={classes.icons}>mail</Icon> Contact Us
+                                </Button>
+                            </Link>
+                        </ListItem>
+                    </List>
+                }
+                {...rest}
+            />
 
             <Parallax image={require("assets/img/mntn-3.jpg")}>
                 <div className={classes.container}>
@@ -46,82 +70,38 @@ export default function Components(props) {
             </Parallax>
 
             <div className={classNames(classes.main, classes.mainRaised)}>
-                <GridItem md={12} className={classes.textCenter}>
-                    <Link to="landing-page" className={classes.link}>
-                        <img
-                            src={landing}
-                            alt="..."
-                            className={
-                                classes.imgRaised +
-                                " " +
-                                classes.imgRounded +
-                                " " +
-                                classes.imgFluid
-                            }
-                        />
+                <SectionSummary/>
 
-                    </Link>
-                </GridItem>
-                <GridItem md={12} className={classes.textCenter}>
+                <GridItem md={12}  className={classes.textCenter}>
                     <Link to="landing-page" className={classes.link}>
-                        <Button color="primary" size="lg" simple>
+                        <Button color="grey" size="lg" round>
                             what we do
+                        </Button>
+                    </Link>
+                    <br/><br/><br/><br/>
+                </GridItem>
+
+                <div className={classes.section}>
+                    <GridContainer justify="center">
+                        <GridItem cs={12} sm={12} md={8} >
+                            <h2  className={classes.title}>Want to talk?</h2>
+                            <h4 className={classes.description}>
+                                If you have any questions about our services then
+                                please contact us below. We'll get back to you
+                                as soon as we can
+                            </h4>
+                            <br/><br/>
+                        </GridItem>
+                    </GridContainer>
+                </div>
+                <GridItem md={12}  className={classes.textCenter}>
+                    <Link to="contact-us" className={classes.link}>
+                        <Button color="grey" size="lg" round>
+                            let's talk
                         </Button>
                     </Link>
                 </GridItem>
             </div>
-
-            {/*<div className={classes.section}>*/}
-            {/*    <GridContainer justify="center">*/}
-            {/*        <GridItem cs={12} sm={12} md={8}>*/}
-            {/*            <h2 className={classes.title}>Want to talk?</h2>*/}
-            {/*            <h4 className={classes.description}>*/}
-            {/*                If you have any questions about our services then*/}
-            {/*                please contact us below to talk. We'll get back to you*/}
-            {/*                as soon as we can*/}
-            {/*            </h4>*/}
-            {/*            <form>*/}
-            {/*                <GridContainer>*/}
-            {/*                    <GridItem xs={12} sm={12} md={6}>*/}
-            {/*                        <CustomInput*/}
-            {/*                            labelText="Your Name"*/}
-            {/*                            id="name"*/}
-            {/*                            formControlProps={{*/}
-            {/*                                fullWidth: true*/}
-            {/*                            }}*/}
-            {/*                        />*/}
-            {/*                    </GridItem>*/}
-            {/*                    <GridItem xs={12} sm={12} md={6}>*/}
-            {/*                        <CustomInput*/}
-            {/*                            labelText="Your Email"*/}
-            {/*                            id="email"*/}
-            {/*                            formControlProps={{*/}
-            {/*                                fullWidth: true*/}
-            {/*                            }}*/}
-            {/*                        />*/}
-            {/*                    </GridItem>*/}
-            {/*                    <CustomInput*/}
-            {/*                        labelText="Your Message"*/}
-            {/*                        id="message"*/}
-            {/*                        formControlProps={{*/}
-            {/*                            fullWidth: true,*/}
-            {/*                            className: classes.textArea*/}
-            {/*                        }}*/}
-            {/*                        inputProps={{*/}
-            {/*                            multiline: true,*/}
-            {/*                            rows: 5*/}
-            {/*                        }}*/}
-            {/*                    />*/}
-            {/*                    <GridContainer justify="center">*/}
-            {/*                        <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>*/}
-            {/*                            <Button color="primary">Send Message</Button>*/}
-            {/*                        </GridItem>*/}
-            {/*                    </GridContainer>*/}
-            {/*                </GridContainer>*/}
-            {/*            </form>*/}
-            {/*        </GridItem>*/}
-            {/*    </GridContainer>*/}
-            {/*</div>*/}
             <Footer/>
         </div>
     );
